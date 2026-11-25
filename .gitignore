@@ -13,3 +13,12 @@ models/*.engine
 models/*.tflite
 backups/
 .DS_Store
+*.backup
+backups/
+data/
+models/*.pt
+models/*.pth
+models/*.onnx
+models/*.engine
+__pycache__/
+*.pyc

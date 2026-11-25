@@ -1,0 +1,155 @@
+{
+  "application": {
+    "name": "DivyaNetra",
+    "version": "2.0.0",
+    "manual_activation": true,
+    "default_mode": "STANDBY",
+    "log_level": "INFO"
+  },
+  "system": {
+    "max_cpu_percent": 90,
+    "max_ram_percent": 90,
+    "thermal_protection": true,
+    "auto_recovery": true,
+    "shutdown_timeout_seconds": 5
+  },
+  "modes": {
+    "STANDBY": {
+      "enabled": true
+    },
+    "INTERACTIVE": {
+      "enabled": true,
+      "camera_a": true,
+      "camera_b": false,
+      "voice": false,
+      "face_recognition": false,
+      "object_detection": false,
+      "eye_monitoring": false
+    },
+    "MONITORING": {
+      "enabled": true,
+      "camera_a": false,
+      "camera_b": true,
+      "face_recognition": true,
+      "object_detection": true,
+      "fall_detection": false,
+      "fight_detection": false
+    },
+    "CUSTOM": {
+      "enabled": true
+    }
+  },
+  "cameras": {
+    "camera_a": {
+      "enabled": true,
+      "device_index": 0,
+      "purpose": "HUD_INTERACTION",
+      "width": 640,
+      "height": 480,
+      "fps": 15
+    },
+    "camera_b": {
+      "enabled": true,
+      "device_index": 2,
+      "purpose": "SECURITY_MONITORING",
+      "width": 640,
+      "height": 480,
+      "fps": 15
+    }
+  },
+  "perception": {
+    "person_detection": {
+      "enabled": true,
+      "confidence": 0.50,
+      "inference_interval_ms": 500
+    },
+    "object_detection": {
+      "enabled": true,
+      "confidence": 0.45,
+      "image_size": 480,
+      "inference_interval_ms": 1000
+    },
+    "face_recognition": {
+      "enabled": true,
+      "confidence_threshold": 0.45,
+      "inference_interval_ms": 1000
+    },
+    "fall_detection": {
+      "enabled": false,
+      "inference_interval_ms": 500
+    },
+    "fight_detection": {
+      "enabled": false,
+      "inference_interval_ms": 1000
+    },
+    "eye_monitoring": {
+      "enabled": false,
+      "inference_interval_ms": 200
+    }
+  },
+  "voice": {
+    "enabled": false,
+    "manual_activation_only": true,
+    "wake_word_enabled": false,
+    "speech_recognition": false,
+    "language": "en",
+    "command_confirmation": true
+  },
+  "alerts": {
+    "enabled": true,
+    "telegram_enabled": false,
+    "sound_enabled": false,
+    "recording_enabled": false,
+    "cooldown_seconds": 30
+  },
+  "severity_actions": {
+    "INFO": {
+      "log": true,
+      "display": true,
+      "sound": false,
+      "telegram": false,
+      "record": false
+    },
+    "LOW": {
+      "log": true,
+      "display": true,
+      "sound": false,
+      "telegram": false,
+      "record": false
+    },
+    "MEDIUM": {
+      "log": true,
+      "display": true,
+      "sound": false,
+      "telegram": false,
+      "record": false
+    },
+    "HIGH": {
+      "log": true,
+      "display": true,
+      "sound": false,
+      "telegram": false,
+      "record": false
+    },
+    "CRITICAL": {
+      "log": true,
+      "display": true,
+      "sound": false,
+      "telegram": false,
+      "record": false
+    }
+  },
+  "sensors": {
+    "esp32_enabled": false,
+    "serial_port": null,
+    "baud_rate": 115200,
+    "connection_timeout_seconds": 3
+  },
+  "storage": {
+    "database_path": "data/events.db",
+    "face_database_path": "data/known_faces.db",
+    "recordings_directory": "data/recordings",
+    "maximum_log_size_mb": 10,
+    "backup_enabled": true
+  }
+}
