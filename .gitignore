@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+venv/
+.env
+*.log
+logs/
+data/known_faces.db
+data/events.db
+data/recordings/
+models/*.pt
+models/*.onnx
+models/*.engine
+models/*.tflite
+backups/
+.DS_Store
